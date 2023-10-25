@@ -4,7 +4,7 @@
 // removeZeros(input, "trailing") // output 000000123423423
 
 const removeZeros = (inputString,leadingOrTrailing) =>{
-    if ( typeof inputString!=='string' ){
+    if ( typeof inputString!=='string' || typeof leadingOrTrailing!=='string' ){
         console.error('Invalid input, check whether it is a string');
         return false;
     }
@@ -49,7 +49,8 @@ const removeZeros = (inputString,leadingOrTrailing) =>{
         return inputString.slice(0, index + 1);
     } 
     else {
-        return inputString;
+       console.error('Invalid input');
+       return false;
     }
 }
 
@@ -74,9 +75,19 @@ const leadingOrTrailing = "leading"; //"trailing"
 // console.log(removeZeros('',inputString));
 // console.log(removeZeros('',''));
 
+
+// console.log(removeZeros('hello',leadingOrTrailing));
+// console.log(removeZeros(inputString,'hi'));
+// console.log(removeZeros('hello',leadingOrTrailing));
+
 // console.log(removeZeros(000000123423423000,leadingOrTrailing)) //number type not accepted
 
 // console.log(removeZeros('-0000012340000','leading')); // negative
+
+//boolean values
+// console.log(removeZeros(true,leadingOrTrailing));
+// console.log(removeZeros(inputString,true));
+// console.log(removeZeros(true,false));
 
 
 // ======Avoid floating values=====
