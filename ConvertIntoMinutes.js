@@ -4,8 +4,10 @@
 
 const convertTimeIntoMinutes = (timeString)=> {
 
-    if(typeof timeString !=='string') return 'Invalid Format data'
-
+    if(typeof timeString !=='string'){
+        console.error('Invalid Format data');
+        return false;
+    }
     // Use a regular expression to match the input format "H:MM"
     const timePattern = /^(\d+):(\d+)$/;
   
@@ -13,7 +15,8 @@ const convertTimeIntoMinutes = (timeString)=> {
     const match = timeString.match(timePattern);
   
     if (match === null) {
-      return "Invalid time format. Use H:MM format.";
+        console.error("Invalid time format. Use H:MM format.");
+        return false;
     }
   
     
@@ -21,7 +24,8 @@ const convertTimeIntoMinutes = (timeString)=> {
     const minutes = parseInt(match[2]);
   
     if (isNaN(hours) || isNaN(minutes) || hours < 0 || minutes < 0 || minutes >= 60) {
-      return "Invalid time values. Hours and minutes must be non-negative and minutes must be less than 60.";
+          console.error("Invalid time values. Hours and minutes must be non-negative and minutes must be less than 60.");
+          return false;
     }
   
     // convert into minutes 
@@ -33,5 +37,6 @@ const convertTimeIntoMinutes = (timeString)=> {
   
 const timeString = '2:30'//"00:00";
 const totalMinutes = convertTimeIntoMinutes(timeString);
+
 console.log(totalMinutes + " minutes");
     
