@@ -10,8 +10,7 @@ const checkNumberInRange = (inputRangeArray, numberToFindInRange ) => {
         return false;
     }
 
-    //it won't work if the first parameter is in number format
-    if (typeof inputRangeArray[0]!=='number' && typeof inputRangeArray[0]!=='number'){
+    if (typeof inputRangeArray[0]!=='number' || typeof inputRangeArray[1]!=='number'){
        console.error("range values should be in 'number' format");
        return false;
     }
@@ -36,6 +35,6 @@ const checkNumberInRange = (inputRangeArray, numberToFindInRange ) => {
     return isInRange;
 }
 
-const range  = [10,'20'];
+const range  = [10,20];
 const numberToFindInRange = 12;
 console.log(checkNumberInRange(range,numberToFindInRange));
