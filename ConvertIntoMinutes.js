@@ -30,11 +30,8 @@ const convertTimeIntoMinutes = (timeString)=> {
     return totalMinutes;
   }
   
-  try {
+  
     const timeString = '2:22'//"00:00";
     const totalMinutes = convertTimeIntoMinutes(timeString);
     console.log(totalMinutes + " minutes");
-  } catch (error) {
-    console.error(error.message);
-  }
-  
+    
